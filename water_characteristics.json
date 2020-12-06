@@ -1,0 +1,81 @@
+{
+    "Evian": {
+        "Source": "Bottle label",
+        "Bicarbonate (HCO3)": 360,
+        "Calcium (Ca)": 80,
+        "Magnesium (Mg)": 26,
+        "TDS": 345,
+        "pH": 7.2,
+        "Sodium": 6.5
+    },
+
+    "Volvic": {
+        "Source": "https://www.volvic.co.uk/products/natural-mineral-water/volvic-natural-mineral-water/natural-mineral-water-500ml",
+        "Bicarbonate (HCO3)": 74,
+        "Calcium (Ca)": 12,
+        "Magnesium (Mg)": 8,
+        "TDS": 130,
+        "pH": 7,
+        "Sodium": 12
+    },
+
+    "SPA": { 
+        "Source": "Bottle label",
+        "Bicarbonate (HCO3)": 17,
+        "Calcium (Ca)": 5,
+        "Magnesium (Mg)": 2,
+        "TDS": 38,
+        "pH": 6,
+        "Sodium": 3
+    },
+
+    "Buxton": {
+        "Source": "https://www.buxtonwater.co.uk/bottled-water/still",
+        "Bicarbonate (HCO3)": 248,
+        "Calcium (Ca)": 55,
+        "Magnesium (Mg)": 19,
+        "TDS": 280,
+        "pH": 7.4,
+        "Sodium": 24
+    },
+
+    "Highland Spring": {
+        "Source": "https://highlandspring.com/natural-source?product=still-water#showcase-tabs",
+        "Bicarbonate (HCO3)": 150,
+        "Calcium (Ca)": 40.5,
+        "Magnesium (Mg)": 10.1,
+        "TDS": 170,
+        "pH": 7.8,
+        "Sodium": 5.6
+    },
+
+    "Icelandic Glacial": {
+         "Source": "https://icelandicglacial.com/pages/our-water",
+        "Bicarbonate (HCO3)": 0,
+        "Calcium (Ca)": 6.4,
+        "Magnesium (Mg)": 2.4,
+        "TDS": 62,
+        "pH": 8.4,
+        "Sodium": 11
+    },
+
+    "Acqua Panna": {
+        "Source": "https://www.nestle-waters.ca/sites/g/files/pydnoa616/files/asset-library/documents/ap_eng.pdf",
+        "Bicarbonate (HCO3)": 100,
+        "Calcium (Ca)": 32,
+        "Magnesium (Mg)": 6.6,
+        "TDS": 150,
+        "pH": 7.9,
+        "Sodium": 6.6
+    },
+
+    "Distilled": {
+        "Source": "https://sciencing.com/ph-distilled-water-4623914.html",
+        "Bicarbonate (HCO3)": 0,
+        "Calcium (Ca)": 0,
+        "Magnesium (Mg)": 0,
+        "TDS": 0,
+        "pH": 5.8,
+        "Sodium": 0
+    }
+}
