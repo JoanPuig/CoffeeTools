@@ -6,7 +6,7 @@
         "Magnesium (Mg)": 26,
         "TDS": 345,
         "pH": 7.2,
-        "Sodium": 6.5
+        "Sodium (Na)": 6.5
     },
 
     "Volvic": {
@@ -16,7 +16,7 @@
         "Magnesium (Mg)": 8,
         "TDS": 130,
         "pH": 7,
-        "Sodium": 12
+        "Sodium (Na)": 12
     },
 
     "SPA": { 
@@ -26,7 +26,7 @@
         "Magnesium (Mg)": 2,
         "TDS": 38,
         "pH": 6,
-        "Sodium": 3
+        "Sodium (Na)": 3
     },
 
     "Buxton": {
@@ -36,7 +36,7 @@
         "Magnesium (Mg)": 19,
         "TDS": 280,
         "pH": 7.4,
-        "Sodium": 24
+        "Sodium (Na)": 24
     },
 
     "Highland Spring": {
@@ -46,7 +46,7 @@
         "Magnesium (Mg)": 10.1,
         "TDS": 170,
         "pH": 7.8,
-        "Sodium": 5.6
+        "Sodium (Na)": 5.6
     },
 
     "Icelandic Glacial": {
@@ -56,7 +56,7 @@
         "Magnesium (Mg)": 2.4,
         "TDS": 62,
         "pH": 8.4,
-        "Sodium": 11
+        "Sodium (Na)": 11
     },
 
     "Acqua Panna": {
@@ -66,7 +66,7 @@
         "Magnesium (Mg)": 6.6,
         "TDS": 150,
         "pH": 7.9,
-        "Sodium": 6.6
+        "Sodium (Na)": 6.6
     },
 
     "Distilled": {
@@ -76,6 +76,17 @@
         "Magnesium (Mg)": 0,
         "TDS": 0,
         "pH": 5.8,
-        "Sodium": 0
+        "Sodium (Na)": 0
+    },
+
+    "Voss": {
+        "Source": "https://vosswater.com/still-nutritional-facts/",
+        "Bicarbonate (HCO3)": 18,
+        "Calcium (Ca)": 3,
+        "Magnesium (Mg)": 0.5,
+        "TDS": 44,
+        "pH": 5.9,
+        "Sodium (Na)": 4
     }
+
 }
