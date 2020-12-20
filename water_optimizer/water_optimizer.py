@@ -52,8 +52,8 @@ Sodium: Less than 30 ml/L
 
 water_targets = [
     Target('TDS', 150.0, 75.0, 250.0, 1.0, 2.0),
-    Target('Total Hardness', 59.5, 17.0, 85.0, 1.0, 2.0),
-    Target('Total Alkalinity', 40.0, 35.0, 45.0, 1.0, 2.0),
+    Target('Total Hardness', 59.5, 17.0, 85.0, 1000.0, 2.0),
+    Target('Total Alkalinity', 40.0, 35.0, 45.0, 1000.0, 2.0),
     Target('pH', 7.0, 6.5, 7.5, 1.0, 2.0),
     Target('Sodium (Na)', 10.0, 0.0, 30.0, 0.0, 1.0),
 ]
@@ -144,7 +144,7 @@ for waters_to_mix in range(1, all_available_water_characteristics.shape[0]):
     else:
         best = min(water_mix_characteristics['Target Deviation'])
         combination_water_mix_characteristics.sort_values('Target Deviation', inplace=True)
-        if combination_water_mix_characteristics.shape[0] > 0 and combination_water_mix_characteristics.iloc[0]['Target Deviation'] < best:
+        if combination_water_mix_characteristics.shape[0] > 0 and combination_water_mix_characteristics.iloc[0]['Target Deviation'] < best and not np.isclose(combination_water_mix_characteristics.iloc[0]['Target Deviation'], best):
             water_mix_characteristics = water_mix_characteristics.append(combination_water_mix_characteristics.iloc[0])
 
 water_mix_characteristics.sort_values('Target Deviation', inplace=True)
