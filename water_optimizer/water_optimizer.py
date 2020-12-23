@@ -33,7 +33,7 @@ all_available_water_characteristics['Total Hardness'] = 2.5 * all_available_wate
 @dataclass(eq=True, frozen=True)
 class Target:
     variable: str
-    target: float
+    value: float
     min_range: float
     max_range: float
     weight: float
@@ -52,13 +52,13 @@ Sodium: Less than 30 ml/L
 
 water_targets = [
     Target('TDS', 150.0, 75.0, 250.0, 1.0, 2.0),
-    Target('Total Hardness', 59.5, 17.0, 85.0, 1000.0, 2.0),
-    Target('Total Alkalinity', 40.0, 35.0, 45.0, 1000.0, 2.0),
+    Target('Total Hardness', 59.5, 17.0, 85.0, 10.0, 2.0),
+    Target('Total Alkalinity', 40.0, 35.0, 45.0, 10.0, 2.0),
     Target('pH', 7.0, 6.5, 7.5, 1.0, 2.0),
-    Target('Sodium (Na)', 10.0, 0.0, 30.0, 0.0, 1.0),
+    Target('Sodium (Na)', 10.0, 0.0, 30.0, 0.1, 2.0),
 ]
 
-min_content = 20.0/100.0  # Discard any optimal solution that has a ratio of less than 5% for one of the waters.
+min_content = 10.0/100.0  # Discard any optimal solution that has a ratio of less than min_content for one of the waters.
 ratio_rounding = 1  # Number of decimal places to round each water ratio
 
 # Number of decimal places to round each water characteristic
@@ -91,7 +91,7 @@ def deviation_from_target(mix_ratio, available_water_characteristics) -> float:
     mix = mix_characteristics(np.append(mix_ratio, 1 - sum(mix_ratio)), available_water_characteristics)
 
     def target_deviation(target):
-        deviation = target.weight * ((mix[target.variable] - target.target) / target.target) ** 2.0
+        deviation = target.weight * ((mix[target.variable] - target.value) / target.value) ** 2.0
 
         if mix[target.variable] < target.min_range or mix[target.variable] > target.max_range:
             return target.out_of_range_penalty * deviation
@@ -123,9 +123,9 @@ for waters_to_mix in range(1, all_available_water_characteristics.shape[0]):
             }
         else:
             results = minimize(deviation_from_target,
-                               x0=(available_water_characteristics_subset.shape[0] - 1) * [0.0],
+                               x0=(available_water_characteristics_subset.shape[0] - 1) * [1.0 / waters_to_mix],
                                bounds=(available_water_characteristics_subset.shape[0] - 1) * [(min_content, 1.0)],
-                               constraints={'type': 'ineq', 'fun': lambda x: 1.0 - sum(x)},
+                               constraints={'type': 'ineq', 'fun': lambda x: ((1.0 - min_content) - sum(x))},
                                args=(available_water_characteristics_subset),
                                options={'disp': False}
                                )
